@@ -1,10 +1,12 @@
+{#{% extends "base2.html" %}#}
 {% load cms_tags menu_tags sekizai_tags static%}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 {% block ww_header %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ResourceOne系列平台产品 - 专业服务 - 中软国际</title>
+{#<title>ResourceOne系列平台产品 - 专业服务 - 中软国际</title>#}
+    <title>{% block title %}This is my new project home page{% endblock title %}</title>
 <meta  name="keywords" content="中软国际 ,IT咨询服务,IT技术服务,电子政务,制造业,金融业,电信,高科技,信息技术,软件研发,企业微博,端到端,软件及信息服务,行业信息化,IT解决方案,行业解决方案,通用解决方案"  />
 <meta name="description" content="中软国际的专业服务包括：平台产品、咨询服务、解决方案和系统相关服务。专业服务根据客户要求，为客户提供信息系统的全套咨询、设计、编码、测试、维护、运行等相关的标准化服务，专业服务通常以项目的形式提供。" />
 
@@ -701,11 +703,17 @@
 {#{% block ww_left_menu %}#}
 {#{% endblock ww_left_menu %}#}
 
-{#</div>#}
-{#</body>#}
-{#{% endblock ww_body %}#}
-
 </div>
+</body>
+{% cms_toolbar %}
+<div style="width: 940px; margin:0 auto">
+    <ul class="nav">
+        {% show_menu 0 100 100 100 %}
+    </ul>
+    {% block content %}
+    {% endblock content %}
+</div>
+
 
 
 </html>
