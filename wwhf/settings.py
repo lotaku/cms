@@ -67,6 +67,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+print STATIC_ROOT
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'wwhf', 'static'),
@@ -179,6 +180,7 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('index.html', 'Index'),
+    ('main.html', 'Main'),
 )
 
 CMS_PERMISSION = True
